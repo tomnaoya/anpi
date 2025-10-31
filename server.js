@@ -5,7 +5,7 @@ const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
 const app = express();
-const db = new sqlite3.Database("./database.sqlite3");
+const db = new sqlite3.Database(path.join(__dirname, "database.sqlite3"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
